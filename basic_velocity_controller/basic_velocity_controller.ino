@@ -95,9 +95,9 @@ void setup() {
   //analogWrite(enB, 90);
 
   // Initial set of pid values
-  kp = 10.0;
+  kp = 30.0;
   ki = 0.01;
-  kd = 0.3;
+  kd = 0.5;
   
   control_time_gap = (unsigned long)(1000000.0/control_frequency);
   goalVels.right = 0.0;
@@ -252,8 +252,8 @@ void setMotorDirection(float pwm, char side, int& dir, float goalVel)
   if(side == 'r')
   {
     
-    i1 = in1;
-    i2 = in2;
+    i1 = in2;
+    i2 = in1;
   }
   else if(side == 'l')
   {
